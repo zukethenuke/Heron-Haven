@@ -1,5 +1,5 @@
 <template>
-    <v-container fluid fill-height class="home-hero" style="max-height: 100vh;">
+    <v-container fluid fill-height style="max-height: 100vh;">
         <!-- <v-layout justify-center align-center column pa-5>
             <v-btn fab class="mt-5 brown darken-4">
             <v-icon large color="white">expand_more</v-icon>
@@ -20,7 +20,7 @@
 
 <script>
 export default {
-    name: 'HomeHero',
+    name: 'HomeCarousel',
     data() {
         return {
             items: [{
@@ -40,10 +40,5 @@ export default {
 </script>
 
 <style scoped>
-/* .home-hero {
-    background: url('../assets/hh-home.jpg');
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-} */
+
 </style>

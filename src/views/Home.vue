@@ -1,17 +1,17 @@
 <template>
   <span>
-    <home-hero></home-hero>
+    <home-carousel></home-carousel>
   </span>
 </template>
 
 <script>
 // @ is an alias to /src
-import HomeHero from '@/components/HomeHero.vue';
+import HomeCarousel from '@/components/HomeCarousel.vue';
 
 export default {
     name: 'home',
     components: {
-        HomeHero
+        HomeCarousel
     }
 };
 </script>
