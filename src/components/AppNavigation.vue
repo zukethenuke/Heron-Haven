@@ -15,13 +15,27 @@
         <v-toolbar app color="brown darken-4" dark>
             <v-toolbar-side-icon class="hidden-md-and-up" @click="drawer = !drawer"></v-toolbar-side-icon>
             <v-spacer class="hidden-md-and-up"></v-spacer>
+
             <router-link to="/">
                 <v-toolbar-title>{{appTitle}}</v-toolbar-title>
             </router-link>
-            <!-- <v-btn flat class="hidden-sm-and-down" to="/menu">Menu</v-btn> -->
-            <v-spacer class="hidden-sm-and-down"></v-spacer>
-            <!-- <div class="display-2 font-weight-black white--text text-xs-center">Heron Haven</div> -->
 
+            <v-spacer class="hidden-sm-and-down"></v-spacer>
+            <v-menu open-on-hover nudge-bottom="38">
+                <v-btn
+                    slot="activator"
+                    color="brown lighten-3"
+                    dark>Friends of Heron Haven
+                </v-btn>
+                <v-list>
+                    <v-list-tile
+                        v-for="(item, index) in friends"
+                        :key="index"
+                        @click="console.log('hi')">
+                        <v-list-tile-title>{{item.title}}</v-list-tile-title>
+                    </v-list-tile>
+                </v-list>
+            </v-menu>
             <v-spacer class="hidden-sm-and-down"></v-spacer>
             <v-btn flat class="hidden-sm-and-down" to="/sign-in">SIGN IN</v-btn>
             <v-btn color="brown lighten-3" class="hidden-sm-and-down" to="/join">JOIN</v-btn>
@@ -37,9 +51,14 @@ export default {
             appTitle: 'Heron Haven',
             drawer: false,
             items: [
-                { title: 'Home', route: '/home' },
+                { title: 'Home', route: '/' },
                 { title: 'Sign In', route: '/sign-in' },
                 { title: 'Join', route: '/join' }
+            ],
+            friends: [
+                { title: 'Information' },
+                { title: 'Membership Application' },
+                { title: 'Contact us' }
             ]
         };
     }

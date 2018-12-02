@@ -1,21 +1,15 @@
 <template>
-    <v-container fluid fill-height style="max-height: 100vh;">
-        <!-- <v-layout justify-center align-center column pa-5>
-            <v-btn fab class="mt-5 brown darken-4">
-            <v-icon large color="white">expand_more</v-icon>
-            </v-btn>
-        </v-layout> -->
-        <v-carousel
-            delimiter-icon="stop"
-            prev-icon="mdi-arrow-left"
-            next-icon="mdi-arrow-right">
-            <v-carousel-item
-                v-for="(item,i) in items"
-                :key="i"
-                :src="item.src"
-            ></v-carousel-item>
-        </v-carousel>
-    </v-container>
+    <v-carousel
+        height="800"
+        delimiter-icon="stop"
+        prev-icon="mdi-arrow-left"
+        next-icon="mdi-arrow-right">
+        <v-carousel-item
+            v-for="(item,i) in images"
+            :key="i"
+            :src="item.src"
+        ></v-carousel-item>
+    </v-carousel>
 </template>
 
 <script>
@@ -23,7 +17,7 @@ export default {
     name: 'HomeCarousel',
     data() {
         return {
-            items: [{
+            images: [{
                 src: require('@/assets/hh-home.jpg')
             },{
                 src: require('@/assets/hh-boardwalk.jpg')
