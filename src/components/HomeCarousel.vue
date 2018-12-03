@@ -5,6 +5,7 @@
         prev-icon="mdi-arrow-left"
         next-icon="mdi-arrow-right">
         <v-carousel-item
+            style="transition: all 2s ease;"
             v-for="(item,i) in images"
             :key="i"
             :src="item.src"

@@ -21,7 +21,7 @@
             </router-link>
 
             <v-spacer class="hidden-sm-and-down"></v-spacer>
-            <v-menu open-on-hover nudge-bottom="38">
+            <v-menu class="hidden-sm-and-down" open-on-hover nudge-bottom="38">
                 <v-btn
                     slot="activator"
                     color="brown lighten-3"
@@ -31,11 +31,12 @@
                     <v-list-tile
                         v-for="(item, index) in friends"
                         :key="index"
-                        @click="console.log('hi')">
+                        to="/">
                         <v-list-tile-title>{{item.title}}</v-list-tile-title>
                     </v-list-tile>
                 </v-list>
             </v-menu>
+            <v-btn flat class="hidden-sm-and-down" to="/map">Map</v-btn>
             <v-spacer class="hidden-sm-and-down"></v-spacer>
             <v-btn flat class="hidden-sm-and-down" to="/sign-in">SIGN IN</v-btn>
             <v-btn color="brown lighten-3" class="hidden-sm-and-down" to="/join">JOIN</v-btn>
