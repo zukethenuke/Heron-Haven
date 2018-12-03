@@ -37,16 +37,17 @@ export default {
                 title: 'Oh My Omaha',
                 text: 'Intro to Heron Haven'
             },{
-                image: 'https://static.tacdn.com/img2/branding/rebrand/TA_brand_logo.png',
+                image: require('@/assets/Trip-Advisor.jpg'),
                 link: 'https://www.tripadvisor.com/Attraction_Review-g60885-d2140558-Reviews-Heron_Haven-Omaha_Nebraska.html',
                 title: 'Trip advisor',
-                text: 'Heron Haven'
+                text: ''
             },{
-                image: require('@/assets/OmahaWH.jpeg'),
-                link: 'https://www.omaha.com/outdoors/hansen-heron-haven-sanctuary-a-sign-that-omahan-won-the/article_e9ff553a-0951-5fe5-83f1-3703b0dc3c8b.html',
-                title: 'Omaha World Herold',
-                text: 'Heron Haven'
-            }]
+                image: 'https://s3-media2.fl.yelpcdn.com/assets/srv0/styleguide/9e6286e52e33/assets/img/brand_guidelines/dont_switch.png',
+                link: 'https://www.yelp.com/biz/heron-haven-nature-center-omaha',
+                title: 'Yelp',
+                text: ''
+            }
+            ]
         }
     }
 }

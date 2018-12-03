@@ -5,15 +5,17 @@
         </v-layout>
         <v-layout row wrap>
             <v-flex xs12 sm12 md4 v-for="(item, index) in news" :key="index">
-                <v-card>
-                    <v-img :src="image" height="300px"></v-img>
-                    <v-card-title>
-                        <div>{{item.title}}</div>
-                    </v-card-title>
-                    <v-card-text>
-                        <div>{{item.text}}</div>
-                    </v-card-text>
-                </v-card>
+                <a :href="item.link">
+                    <v-card>
+                        <v-img :src="item.image" height="300px"></v-img>
+                        <v-card-title>
+                            <div >{{item.source}}</div>
+                        </v-card-title>
+                        <v-card-text>
+                            <div>{{item.text}}</div>
+                        </v-card-text>
+                    </v-card>
+                </a>
             </v-flex>
         </v-layout>
     </v-container>
@@ -26,14 +28,15 @@ export default {
         return {
             image: require('@/assets/hh-home.jpg'),
             news: [{
-                title: 'Story 1',
-                text: 'Retired teacher and certified Nebraska Master Naturalist LeDoux is channeling her expertise on native ecosystems and habitat conservation into volunteer work at Heron Haven, a wetland sanctuary in northwest Omaha that offers free, daily trail access (flat and full of photo opportunities) from sunrise to sunset.'
+                image: 'https://bloximages.newyork1.vip.townnews.com/omaha.com/content/tncms/assets/v3/editorial/f/21/f212b945-c7e8-5480-8709-d2f10da589ae/54a884bc7e7d6.image.jpg?crop=1401%2C1088%2C8%2C11&resize=1200%2C932&order=crop%2Cresize',
+                link: 'https://www.omaha.com/outdoors/hansen-heron-haven-sanctuary-a-sign-that-omahan-won-the/article_e9ff553a-0951-5fe5-83f1-3703b0dc3c8b.html',
+                source: 'Omaha World Herold',
+                text: 'Heron Haven sanctuary a sign that Omahan won the fight she picked with developers'
             },{
-                title: 'Story 2',
-                text: 'Retired teacher and certified Nebraska Master Naturalist LeDoux is channeling her expertise on native ecosystems and habitat conservation into volunteer work at Heron Haven, a wetland sanctuary in northwest Omaha that offers free, daily trail access (flat and full of photo opportunities) from sunrise to sunset.'
-            },{
-                title: 'Story 3',
-                text: 'Retired teacher and certified Nebraska Master Naturalist LeDoux is channeling her expertise on native ecosystems and habitat conservation into volunteer work at Heron Haven, a wetland sanctuary in northwest Omaha that offers free, daily trail access (flat and full of photo opportunities) from sunrise to sunset.'
+                image: 'https://bloximages.newyork1.vip.townnews.com/omaha.com/content/tncms/assets/v3/editorial/f/02/f02880b1-aecc-5d72-a549-c2d164848bc4/5333038e25c84.image.jpg',
+                link: 'https://www.omaha.com/living/hidden-gems-heron-haven-also-quiet-refuge-for-humans/article_507b9f6b-754b-5cf1-abd6-3be2ebd2b47a.html',
+                source: 'Omaha World Herold',
+                text: 'Hidden Gems: Heron Haven also quiet refuge for humans'
             }]
         }
     }
@@ -41,6 +44,8 @@ export default {
 </script>
 
 <style scoped>
-
+a {
+    text-decoration: none;
+}
 </style>
 
