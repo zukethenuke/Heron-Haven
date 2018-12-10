@@ -10,6 +10,7 @@ module.exports = {
          "no-multiple-empty-lines": ["off", {
              "max": 2,
              "maxBOF": 1
-         }]
+         }],
+         "semi": ["error", "always"]
     }
 };
