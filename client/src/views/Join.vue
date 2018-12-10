@@ -1,26 +1,30 @@
 <template>
-    <v-layout column>
-        <v-flex sx6 offset-xs3>
-            <div class="white elevation-2">
-                <v-toolbar flat dense class="cyan" dark>
+    <v-layout row>
+        <v-flex xs10 md6 offset-xs1 offset-md3>
+            <div class="white elevation-2 mt-4">
+                <v-toolbar flat dense class="brown lighten-2" dark>
                     <v-toolbar-title>Register</v-toolbar-title>
                 </v-toolbar>
                 <div class="pl-4 pr-4 pt-2 pb-2">
-                    <input
+                    <v-text-field
+                        v-validate="'required|email'"
                         type="email"
-                        name="email"
                         v-model="email"
-                        placeholder="email">
-                    <br>
-                    <input
+                        label="E-mail"
+                        data-vv-name="email"
+                        required
+                    ></v-text-field>
+                    <v-text-field
+                        v-validate="'required|password'"
                         type="password"
-                        name="password"
                         v-model="password"
-                        placeholder="password">
-                    <br>
+                        label="Password"
+                        data-vv-name="password"
+                        required
+                    ></v-text-field>
                     <div class="error" v-html="error"></div>
                     <br>
-                    <v-btn class="cyan" @click="register">Register</v-btn>
+                    <v-btn class="brown lighten-2" dark @click="register">Register</v-btn>
                 </div>
             </div>
         </v-flex>
@@ -53,8 +57,4 @@ export default {
 </script>
 
 <style scoped>
-/* .err {
-    color: red;
-    background: white;
-} */
 </style>

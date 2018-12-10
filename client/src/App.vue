@@ -1,20 +1,20 @@
 <template>
     <v-app>
-        <app-navigation></app-navigation>
+        <app-header></app-header>
 
-        <v-content transition="slide-x-transition">
+        <v-content fluid>
             <router-view></router-view>
         </v-content>
     </v-app>
 </template>
 
 <script>
-import AppNavigation from '@/components/AppNavigation'
+import AppHeader from '@/components/AppHeader'
 
 export default {
-  name: 'App',
-  components: {
-    AppNavigation
-  }
+    name: 'App',
+    components: {
+        AppHeader
+    }
 }
 </script>
