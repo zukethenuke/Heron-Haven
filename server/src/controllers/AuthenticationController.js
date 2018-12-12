@@ -15,7 +15,11 @@ module.exports = {
     async register (req, res) {
         try {
             const user = await User.create(req.body);
-            res.send(user.toJSON());
+            const userJson = user.toJSON();
+            res.send({
+                user: userJson,
+                token: jwtSignUser(userJson)
+            });
         } catch (error) {
             res.status(400).send({
                 error: 'Email address is already being used'
@@ -30,7 +34,7 @@ module.exports = {
                     email
                 }
             });
-            const isPasswordValid = await user.comparePassword(password);
+            const isPasswordValid = user ? await user.comparePassword(password) : false;
 
             if (!user || !isPasswordValid) {
                 return res.status(403).send({
