@@ -38,8 +38,8 @@
             </v-menu>
             <v-btn flat class="hidden-sm-and-down" to="/map">Map</v-btn>
             <v-spacer class="hidden-sm-and-down"></v-spacer>
-            <v-btn flat class="hidden-sm-and-down" to="/signin">SIGN IN</v-btn>
-            <v-btn color="brown lighten-3" class="hidden-sm-and-down" to="/join">SIGN UP</v-btn>
+            <v-btn v-if="!$store.state.isUserLoggedIn" flat class="hidden-sm-and-down" to="/signin">SIGN IN</v-btn>
+            <v-btn v-if="!$store.state.isUserLoggedIn" color="brown lighten-3" class="hidden-sm-and-down" to="/join">SIGN UP</v-btn>
         </v-toolbar>
     </span>
 </template>
@@ -53,7 +53,7 @@ export default {
             drawer: false,
             items: [
                 { title: 'Home', route: '/' },
-                { title: 'Sign In', route: '/sign-in' },
+                { title: 'Sign In', route: '/signin' },
                 { title: 'Join', route: '/join' }
             ],
             friends: [
@@ -62,7 +62,7 @@ export default {
                 { title: 'Contact us' }
             ]
         }
-    }
+    },
 }
 </script>
 
